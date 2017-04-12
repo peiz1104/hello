@@ -1,0 +1,70 @@
+/*
+* @Author: pengzhen
+* @Date:   2016-12-06 17:46:49
+* @Last Modified by:   pengzhen
+* @Last Modified time: 2016-12-07 11:20:34
+*/
+
+@import url('../../../styles/theme.less');
+.menu-tree-wrapper {
+    @activeColor: #e96812;
+    .menu-tree-title {
+        line-height: 32px;
+        background: @primary-color;
+        color: #fff;
+        text-align: center;
+        margin-bottom: -1px;
+        position: relative;
+        z-index: 1;
+        cursor: pointer;
+    }
+    .tree-list {
+        .tree-list-item {
+            background: transparent;
+            margin: 0;
+            padding: 0;
+            color: #616161;
+            background: #f7f7f7;
+            margin-top: -1px;
+            cursor: pointer;
+            &.active {
+                background: #fff;
+                color: @activeColor;
+            }
+        }
+        .tree-list-child {
+            padding: 0;
+        }
+    }
+    .menu-item-content {
+        padding-left: 30px;
+        padding-right: 10px;
+        position: relative;
+        &:before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: @activeColor;
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            margin-top: -4px;
+            margin-left: -4px;
+        }
+        &.open .menu-arrow {
+            transform: rotate(180deg);
+        }
+        .menu-arrow {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 32px;
+            height: 32px;
+            line-height: 32px;
+            text-align: center;
+            transform: rotate(0deg);
+            transition: 0.3s transform;
+        }
+    }
+}

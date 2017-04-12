@@ -1,0 +1,18 @@
+.DS_Store
+.idea
+.settings
+.project
+node_modules
+*.log
+dist
+node_modules.rar
+node_modules.zip
+/qm.zip
+/ver.txt
+*.sublime-workspace
+
+// vscode ts配置文件
+.vscode
+typings.json
+tsconfig.json
+/typings

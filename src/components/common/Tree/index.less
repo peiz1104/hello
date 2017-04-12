@@ -1,0 +1,36 @@
+/*
+* @Author: pengzhen
+* @Date:   2016-11-20 01:31:06
+* @Last Modified by:   pengzhen
+* @Last Modified time: 2016-12-07 11:19:21
+*/
+@import url('../../../styles/theme.less');
+
+.tree-list{
+    @line-height: 32px;
+    .tree-list-item{
+        border: 1px solid #ddd;
+        background: #fff;
+        position: relative;
+        padding: 0 20px;
+        line-height: @line-height;
+        min-height: @line-height;
+        margin: 5px 0;
+        &.has-child{
+            padding-left: @line-height;
+        }
+        .expand-btn{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: @line-height;
+            height: @line-height;
+            text-align: center;
+        }
+        .tree-list-item-content{
+        }
+    }
+    .tree-list-child{
+        padding-left: 30px;
+    }
+}

@@ -1,0 +1,158 @@
+/*
+* @Author: pengzhen
+* @Date:   2016-11-28 16:04:38
+* @Last Modified by:   pengzhen
+* @Last Modified time: 2016-12-20 17:49:58
+*/
+
+@import url('./iconfont/iconfont.less');
+// button 扩展
+@btn-base-color: #fff;
+@btn-info-bg: #6FB3E0;
+@btn-success-bg: #82AF6F;
+@btn-warn-bg: #F89406;
+@btn-error-bg: #D15B47;
+.ant-btn-success {
+    .button-variant-primary(@btn-base-color;
+    @btn-success-bg);
+}
+
+.ant-btn-error {
+    .button-variant-primary(@btn-base-color;
+    @btn-error-bg);
+}
+
+.ant-btn-warn {
+    @btn-base-color: #fff;
+    .button-variant-primary(@btn-base-color;
+    @btn-warn-bg);
+}
+
+.ant-btn-info {
+    @btn-base-color: #fff;
+    .button-variant-primary(@btn-base-color;
+    @btn-info-bg);
+}
+
+.button-variant-primary(@color;
+@background) {
+    .button-color(@color;
+    @background;
+    @background);
+    &:hover,
+    &:focus {
+        .button-color(@color;
+        tint(@background, 20%);
+        tint(@background, 20%));
+    }
+    &:active,
+    &.active {
+        .button-color(@color;
+        shade(@background, 5%);
+        shade(@background, 5%));
+    }
+    .button-disabled();
+}
+
+.button-color(@color;
+@background;
+@border) {
+    color: @color;
+    background-color: @background;
+    border-color: @border;
+    > a:only-child {
+        color: currentColor;
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: transparent;
+        }
+    }
+}
+
+.button-disabled() {
+    &.disabled,
+    &[disabled] {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            .button-color(@btn-disable-color;
+            @btn-disable-bg;
+            @btn-disable-border);
+        }
+    }
+}
+
+// TreeSelect 图标样式
+.ant-select-tree {
+    li span.ant-select-tree-icon_loading {
+        position: absolute;
+        left: 0;
+        background: #fff;
+        &:after {
+            margin-top: 0;
+        }
+    }
+    .ant-select-tree-node-content-wrapper {
+        padding-left: 15px;
+    }
+    .ant-select-tree-node-content-wrapper-close {
+        position: relative;
+        &:before {
+            content: "\e684";
+            font-family: "anticon" !important;
+            color: #dfc37a;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            display: inline-block;
+            font-size: 14px;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+        }
+    }
+    .ant-select-tree-node-content-wrapper-open {
+        position: relative;
+        &:before {
+            content: "\e682";
+            font-family: "anticon" !important;
+            color: #dfc37a;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            display: inline-block;
+            font-size: 14px;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+        }
+    }
+    .ant-select-tree-node-content-wrapper-normal {
+        position: relative;
+        &:before {
+            content: "\e67d";
+            font-family: "anticon" !important;
+            color: #8592bb;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            display: inline-block;
+            font-size: 14px;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+        }
+    }
+}
+
+.ant-tag{
+    cursor: default;
+}
+
+.ant-tag-has-color{
+    color: #fff;
+}
